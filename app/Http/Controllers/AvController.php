@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Announcement;
 use App\Models\User;
-use App\Models\coment;
+
 use Illuminate\Support\Facades\Gate;
 
 class AvController extends Controller
@@ -101,16 +101,4 @@ class AvController extends Controller
         return view('done',['announcement'=>$announcement]);
     }
 
-    public function coment(request $request){
-        $coment = new coment;
-        $coment->comentario = $request->comentario;
-        $user = auth()->user(); 
-        $coment->user_id = $user->id;
-        $coment->save();
-        
-        
-        return redirect('/')->with('msg', 'comentado Com Sucesso!');
-        
-        
-    }
 }
