@@ -41,9 +41,6 @@
             </form>
         </div>
     </div>
-    @foreach($coments as $coments)
-    <h1>{{$coments->comentario}}</h1>
-    @endforeach
 </div>
 
 @endsection
